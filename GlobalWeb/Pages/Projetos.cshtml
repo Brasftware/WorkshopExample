@@ -1,0 +1,34 @@
+@page
+@model GlobalWeb.Pages.ProjetosModel
+@{
+    ViewData["Title"] = "Projetos";
+}
+
+<section class="mb-4">
+    <h1 class="display-6 mb-2">Projetos</h1>
+    <p class="text-muted mb-0">Exemplos de iniciativas desenvolvidas para clientes B2B em diferentes segmentos.</p>
+</section>
+
+<div class="row g-3">
+    @foreach (var projeto in Model.Projetos)
+    {
+        <div class="col-12 col-lg-6">
+            <article class="card h-100">
+                <div class="card-body d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+                        <h2 class="h5 card-title mb-0">@projeto.Nome</h2>
+                        <span class="badge @projeto.StatusClass">@projeto.Status</span>
+                    </div>
+
+                    <p class="card-text">@projeto.Descricao</p>
+
+                    <ul class="list-unstyled small text-muted mt-auto mb-0">
+                        <li><strong>Cliente:</strong> @projeto.Cliente</li>
+                        <li><strong>Ano:</strong> @projeto.Ano</li>
+                        <li><strong>Tecnologias:</strong> @string.Join(", ", projeto.Tecnologias)</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    }
+</div>

@@ -1,0 +1,74 @@
+@page
+@model GlobalWeb.Pages.ContatoModel
+@{
+    ViewData["Title"] = "Contato";
+}
+
+<section class="mb-4">
+    <h1 class="display-6 mb-2">Contato</h1>
+    <p class="text-muted mb-0">Fale com nosso time para discutir seu próximo projeto.</p>
+</section>
+
+<div class="row g-4">
+    <div class="col-12 col-lg-5">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="h5 card-title">Formas de contato</h2>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><strong>E-mail:</strong> comercial@globalwebsolutions.com</li>
+                    <li class="mb-2"><strong>Telefone:</strong> +55 (11) 4000-1234</li>
+                    <li class="mb-0"><strong>LinkedIn:</strong> linkedin.com/company/globalwebsolutions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-7">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="h5 card-title">Envie sua mensagem</h2>
+
+                @if (Model.EnvioSimuladoComSucesso)
+                {
+                    <div class="alert alert-success" role="alert">
+                        Mensagem enviada com sucesso (simulação). Retornaremos em breve.
+                    </div>
+                }
+
+                <form method="post" novalidate>
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="FormData.Nome" class="form-label"></label>
+                        <input asp-for="FormData.Nome" class="form-control" />
+                        <span asp-validation-for="FormData.Nome" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="FormData.Email" class="form-label"></label>
+                        <input asp-for="FormData.Email" class="form-control" />
+                        <span asp-validation-for="FormData.Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="FormData.Empresa" class="form-label"></label>
+                        <input asp-for="FormData.Empresa" class="form-control" />
+                        <span asp-validation-for="FormData.Empresa" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="FormData.Mensagem" class="form-label"></label>
+                        <textarea asp-for="FormData.Mensagem" class="form-control" rows="5"></textarea>
+                        <span asp-validation-for="FormData.Mensagem" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
