@@ -15,7 +15,7 @@ Projeto institucional B2B em **ASP.NET Core Razor Pages (.NET 8)** com 3 página
 
 ## Como executar
 
-1. Abra um terminal na pasta `/home/runner/work/WorkshopExample/WorkshopExample/GlobalWeb`
+1. Abra um terminal na pasta `GlobalWeb`
 2. Rode:
 
 ```bash
@@ -30,5 +30,5 @@ dotnet run
 Para validar compilação:
 
 ```bash
-dotnet build /home/runner/work/WorkshopExample/WorkshopExample/GlobalWeb.sln
+dotnet build GlobalWeb.sln
 ```
