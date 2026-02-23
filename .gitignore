@@ -28,4 +28,4 @@ Thumbs.db
 packages/
 
 # ASP.NET Core generated files
-wwwroot/lib/
+GlobalWeb/wwwroot/lib/
